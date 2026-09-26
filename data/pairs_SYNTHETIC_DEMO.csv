@@ -1,0 +1,781 @@
+cr_id,change_text,requirement_id,requirement_text,req_type,label
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,1
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,1
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,1
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,1
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,1
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-01,Replace the credit card payment provider with a new third-party gateway (Stripe).,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,1
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,1
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,1
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,1
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-02,Add support for partial refunds instead of only full refunds.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,1
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,1
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,1
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,1
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-03,Require two-factor authentication for all administrator accounts.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-008,The system shall display a paginated list of available products.,CATALOG,1
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,1
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-011,The system shall display the current stock level for each product.,CATALOG,1
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,1
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-04,Allow customers to filter search results by customer rating in addition to price.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,1
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,1
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,1
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,1
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-05,Change the cart to support saving items for later instead of removing them.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,1
+CR-06,Send an SMS instead of email when an order ships.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,1
+CR-06,Send an SMS instead of email when an order ships.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,1
+CR-06,Send an SMS instead of email when an order ships.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,1
+CR-06,Send an SMS instead of email when an order ships.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,1
+CR-06,Send an SMS instead of email when an order ships.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-06,Send an SMS instead of email when an order ships.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,1
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-07,Add a new discount type that only applies to first-time customers.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,1
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,1
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,1
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,1
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-08,Extend session expiry from thirty minutes to two hours for logged-in users.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,1
+CR-09,Add a report showing revenue broken down by payment method.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,1
+CR-09,Add a report showing revenue broken down by payment method.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,1
+CR-09,Add a report showing revenue broken down by payment method.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,1
+CR-09,Add a report showing revenue broken down by payment method.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-09,Add a report showing revenue broken down by payment method.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,1
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-10,Automatically cancel an order if payment is not completed within fifteen minutes.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,1
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-11,Allow an administrator to bulk-update stock levels via CSV upload.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,1
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,1
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,1
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,1
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,1
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-12,"Notify an administrator by SMS, not just in-app, when stock is critically low.",REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,1
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,1
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,1
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,1
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-13,Lock a user account for one hour instead of permanently after failed logins.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,1
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,1
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,1
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-14,Retain reports for seven years instead of three for regulatory compliance.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-001,The system shall allow a user to register with an email and password.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-002,The system shall allow a user to log in using email and password.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-003,The system shall lock an account after five consecutive failed login attempts.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-004,The system shall allow a user to reset a forgotten password via email link.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-005,The system shall support two-factor authentication using a one-time code.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-006,The system shall log every failed login attempt with a timestamp.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-007,The system shall expire a user session after thirty minutes of inactivity.,AUTH,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-008,The system shall display a paginated list of available products.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-009,The system shall allow a user to search products by keyword.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-010,The system shall allow filtering of products by category and price range.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-011,The system shall display the current stock level for each product.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-012,"The system shall show product images, description, and specifications.",CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-013,The system shall allow an administrator to add a new product to the catalog.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-014,The system shall allow an administrator to mark a product as discontinued.,CATALOG,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-015,The system shall allow a user to add a product to the shopping cart.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-016,The system shall allow a user to remove a product from the shopping cart.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-017,The system shall allow a user to change the quantity of an item in the cart.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-018,The system shall calculate the subtotal of all items in the cart.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-019,The system shall persist the cart contents across user sessions.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-020,The system shall warn the user if a cart item is out of stock at checkout.,CART,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-021,The system shall allow a user to pay for an order using a credit card.,PAYMENT,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-022,The system shall allow a user to pay for an order using cash on delivery.,PAYMENT,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-023,The system shall validate the credit card number before submitting payment.,PAYMENT,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-024,The system shall apply a discount code to the order total before payment.,PAYMENT,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-025,The system shall record the payment method used for each completed order.,PAYMENT,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-026,The system shall issue a refund to the original payment method on cancellation.,PAYMENT,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-027,The system shall retry a failed payment transaction up to three times.,PAYMENT,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-028,The system shall create an order record once payment is confirmed.,ORDER,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-029,The system shall assign a unique order number to every new order.,ORDER,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-030,The system shall allow a user to view the status of a past order.,ORDER,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-031,The system shall allow a user to cancel an order before it ships.,ORDER,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-032,The system shall update inventory levels when an order is placed.,ORDER,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-033,The system shall generate an invoice document for every completed order.,ORDER,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-034,The system shall allow an administrator to mark an order as shipped.,ORDER,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-035,The system shall send an email confirmation when an order is placed.,NOTIFICATION,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-036,The system shall send an email notification when an order ships.,NOTIFICATION,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-037,The system shall send an SMS notification when a payment fails.,NOTIFICATION,1
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-038,The system shall notify an administrator when stock falls below a threshold.,NOTIFICATION,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-039,The system shall allow a user to opt out of promotional email notifications.,NOTIFICATION,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-040,The system shall send a password-reset email within one minute of the request.,NOTIFICATION,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-041,The system shall allow an administrator to view all registered users.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-042,The system shall allow an administrator to deactivate a user account.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-043,The system shall allow an administrator to configure tax rates by region.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-044,The system shall allow an administrator to manage discount codes.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-045,The system shall restrict administrator functions to users with the admin role.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-046,The system shall log every administrative action with the acting user's ID.,ADMIN,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-047,The system shall generate a monthly sales report by product category.,REPORTING,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-048,The system shall generate a report of orders paid by credit card.,REPORTING,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-049,The system shall allow export of any report to CSV format.,REPORTING,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-050,The system shall display a dashboard of daily revenue for administrators.,REPORTING,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-051,The system shall generate a report of failed payment transactions.,REPORTING,0
+CR-15,Add cash-on-delivery order tracking to the shipment notification email.,REQ-052,The system shall retain report data for a minimum of three years.,REPORTING,0

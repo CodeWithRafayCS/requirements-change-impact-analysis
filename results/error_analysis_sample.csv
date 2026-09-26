@@ -1,0 +1,394 @@
+cr_id,requirement_id,change_text,requirement_text,cosine_sim,nli_score,lexical_score,c3_score,error_type
+MRM-1090,MRM-1345,"Search returns too many results. When performing a search for a specific artifactId, there will be many other projects that will be returned presumably because they have that defined as a dependency.  I would expect the behavior to be that the artifactId which is defined as a project should be returned only or at least returned as the first entry.  For a common jar, there could be several pages and the ""real"" project is buried somewhere in those pages.
+
+Due to this issue, this makes the UI search interface unusable in many cases.","update use of Nexus indexer to use Maven indexer. the Nexus indexer has evolved since the version we used (and will soon be moved under the Maven project).
+
+To ensure proper compatibility with other clients and the addition of features such as creating incremental indexes, we should upgrade and follow other recommendations provided by the indexer team. I've started a discussion with Brian on the topic and need to fold it back into here.
+
+I will link the related issues we have that we should try to resolve at the same time.",0.42158198,0.00018109138,0.022222223,0.3057937,false_negative
+MRM-1024,MRM-1137,"Archiva throws NPE when a user uploads a large artifact. When a user uploads a file larger then 2097152bytes they are presented with a meaningless NPE (attached as NPE-user.txt) and the server throws a NPE (attached as NPE-server.txt) but also contains the following:
+
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.Dispatcher getSaveDir
+INFO: Unable to find 'struts.multipart.saveDir' property setting. Defaulting to javax.servlet.context.tempdir
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest parse
+SEVERE: org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:14 AM org.apache.struts2.interceptor.FileUploadInterceptor intercept
+SEVERE: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet default threw exception
+
+With some digging i found that i could increase this limit by adding ""struts.multipart.maxSize=20971520"" to webapps/archiva/ROOT/WEB-INF/classes/struts.properties which i have tested
+
+archiva needs to handle this exception better to the user/server and there needs to be a mechanism to define the max file size in a better solution","Cannot upload artifact to WEB UI any more. Here is reference to the discussion
+
+http://www.nabble.com/Nullpointer-in-VersionUtil-when-uploading-td20563568.html",0.46844852,2.5061203e-05,0.0148148155,0.12923664,false_negative
+MRM-1024,MRM-1059,"Archiva throws NPE when a user uploads a large artifact. When a user uploads a file larger then 2097152bytes they are presented with a meaningless NPE (attached as NPE-user.txt) and the server throws a NPE (attached as NPE-server.txt) but also contains the following:
+
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.Dispatcher getSaveDir
+INFO: Unable to find 'struts.multipart.saveDir' property setting. Defaulting to javax.servlet.context.tempdir
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest parse
+SEVERE: org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:14 AM org.apache.struts2.interceptor.FileUploadInterceptor intercept
+SEVERE: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet default threw exception
+
+With some digging i found that i could increase this limit by adding ""struts.multipart.maxSize=20971520"" to webapps/archiva/ROOT/WEB-INF/classes/struts.properties which i have tested
+
+archiva needs to handle this exception better to the user/server and there needs to be a mechanism to define the max file size in a better solution","Bug with upload artifact. Artifact Data:
+
+Group Id:  org.apache.openjpa	
+Artifact Id: openjpa-persistence	
+Version: 1.0.0	
+Packaging: jar	
+
+When i upload artifact openjpa-persistence there is an error: 
+
+javax.servlet.ServletException: java.lang.NullPointerException
+	org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:515)
+	org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:419)
+	com.opensymphony.module.sitemesh.filter.PageFilter.parsePage(PageFilter.java:118)
+	com.opensymphony.module.sitemesh.filter.PageFilter.doFilter(PageFilter.java:52)
+	org.apache.struts2.dispatcher.ActionContextCleanUp.doFilter(ActionContextCleanUp.java:99)
+	org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+
+root cause
+
+java.lang.NullPointerException
+	org.apache.maven.archiva.common.utils.VersionUtil.isVersion(VersionUtil.java:92)
+	org.apache.maven.archiva.web.action.UploadAction.validate(UploadAction.java:597)
+	com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:200)
+	com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:150)
+	org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:48)
+	com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:123)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:186)
+	com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:105)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:83)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:268)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:74)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:127)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.interceptor.ProfilingActivationInterceptor.intercept(ProfilingActivationInterceptor.java:107)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:206)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:115)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:143)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:121)
+	com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:170)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:123)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:176)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.codehaus.plexus.redback.struts2.interceptor.AutoLoginInterceptor.intercept(AutoLoginInterceptor.java:165)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.codehaus.plexus.redback.struts2.interceptor.ForceAdminUserInterceptor.intercept(ForceAdminUserInterceptor.java:75)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:186)
+	com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:50)
+	org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:504)
+	org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:419)
+	com.opensymphony.module.sitemesh.filter.PageFilter.parsePage(PageFilter.java:118)
+	com.opensymphony.module.sitemesh.filter.PageFilter.doFilter(PageFilter.java:52)
+	org.apache.struts2.dispatcher.ActionContextCleanUp.doFilter(ActionContextCleanUp.java:99)
+	org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)",0.5767511,4.4300185e-05,0.006872852,0.18283096,false_negative
+MRM-1041,MRM-1037,artifact version list should show basic shared project information rather than having to drill into one version .,"Search Usability. Taken from Bretts email to the list
+{noformat}
+   - [ ] improve the search results page
+       - [ ] remove metadata files
+       - [ ] merge versions in search results
+       - [ ] for snapshots, just show SNAPSHOT, not timestamps
+       - [ ] show hits in the results (this may not be possible or needed with better results, however)
+
+   - [ ] existing JIRA complaints
+       - [ ] MRM-732 (tokenizing)
+       - [ ] MRM-495 (weighting)
+       - [ ] MRM-609 (windows bug - may be fixed)
+       - [ ] MRM-933 (hit count, pagination completely busted)
+
+   - [ ] advanced search
+       - [ ] improve appearance and flexibility, maybe change to ""add term"" buttons on the default search
+       - [ ] class/package search is still flaky
+           - [ ] might be the analyzer rules, etc. for splitting on '.'
+
+- [ ] browse improvements
+   - [ ] artifact version list should show basic shared project information rather than having to drill into one version
+   - [ ] snapshot should go to a page that shows a list of versions
+         (go to latest, but list previous snapshots)
+{noformat}",0.49310243,0.13432257,0.059259262,0.4784751,false_negative
+MRM-1024,MRM-1048,"Archiva throws NPE when a user uploads a large artifact. When a user uploads a file larger then 2097152bytes they are presented with a meaningless NPE (attached as NPE-user.txt) and the server throws a NPE (attached as NPE-server.txt) but also contains the following:
+
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.Dispatcher getSaveDir
+INFO: Unable to find 'struts.multipart.saveDir' property setting. Defaulting to javax.servlet.context.tempdir
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest parse
+SEVERE: org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:14 AM org.apache.struts2.interceptor.FileUploadInterceptor intercept
+SEVERE: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet default threw exception
+
+With some digging i found that i could increase this limit by adding ""struts.multipart.maxSize=20971520"" to webapps/archiva/ROOT/WEB-INF/classes/struts.properties which i have tested
+
+archiva needs to handle this exception better to the user/server and there needs to be a mechanism to define the max file size in a better solution","upload is stalling if file size exceeds limit. When uploading (using web interace)  file bigger then max upload file limit browser is handling (waiting for response) and in server logs I can read:
+[#|2008-12-18T01:30:39.415-0700|SEVERE|sun-appserver9.1|org.apache.struts2.dispatcher.multipart.MultiPartRequest|_ThreadID=59;_ThreadName=httpSSLWorkerThread-8282-12;_RequestID=d94472f6-52f7-49b9-a2f5-388beca13572;|org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (15692801) exceeds the configured maximum (2097152)|#]
+
+[#|2008-12-18T01:30:39.431-0700|SEVERE|sun-appserver9.1|org.apache.struts2.interceptor.FileUploadInterceptor|_ThreadID=59;_ThreadName=httpSSLWorkerThread-8282-12;_RequestID=d94472f6-52f7-49b9-a2f5-388beca13572;|the request was rejected because its size (15692801) exceeds the configured maximum (2097152)|#]
+
+[#|2008-12-18T01:30:40.590-0700|SEVERE|sun-appserver9.1|javax.enterprise.system.container.web|_ThreadID=59;_ThreadName=httpSSLWorkerThread-8282-12;_RequestID=d94472f6-52f7-49b9-a2f5-388beca13572;|StandardWrapperValve[default]: PWC1406: Servlet.service() for servlet default threw exception
+java.lang.NullPointerException
+        at org.apache.maven.archiva.common.utils.VersionUtil.isVersion(VersionUtil.java:92)
+        at org.apache.maven.archiva.web.action.UploadAction.validate(UploadAction.java:597)
+        at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:200)
+        at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+        at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+        at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+        at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+        at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+        at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:150)
+        at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:48)
+        at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+        at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+        at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+        at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)",0.7526264,0.00042813367,0.07245054,0.29523152,false_negative
+MRM-1071,MRM-1458,"Clean up old versions feature. I like to clean up old versions in our company maven2 repository.
+
+I can do it on the filesystem, but that costs a lot of time to find the versions/groupIds.
+I like to see a solutions in archiva. (I have seen that artifactory has also such a functionality.","Repository purge options for released artifacts to improve usability of Search and Browse functions. We work in a sort of agile way with (very) frequent releases. Our release repository currently has a file count of ~80,000 (total of jar, javadoc, and source artifacts).
+
+Most of these releases are actually obsolete and have long been superseded by more recent releases.
+To my knowledge there is not currently a way in Archiva to purge released artifacts (if not one by one or by manipulating the database/file system).
+
+The repository management screens in Archiva offer a (boolean) option to ""Delete Released Snapshots"". It would be very useful to have a repository purge options that applies to obsolete releases such as: ""Keep only X most recent releases"".
+
+Please note that despite large repository sizes we are encountering no noticeable performance issues (on an oldish x86 Red Hat Linux box). The feature will greatly improve usability of the Archiva Search and Browse functions.",0.7212696,5.237342e-05,0.022222223,0.52002037,false_negative
+MRM-1063,MRM-971,"index-public-method throwing ConsumerExceptions. Executed ""mvn deploy"" on multi-module project. As build and deployment traverses to submodules, exceptions listed below are thrown:
+
+2009-01-13 19:01:47,763 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com. myproject2:jar:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while adding artifact to index: Error updating index: Lock obtain timed out: SimpleFSLock@E:\archiva\data\repositories\internal\.index\bytecode\write.lock
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:162)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:528)
+	at java.lang.Thread.run(Thread.java:595)
+2009-01-13 19:01:48,982 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com.myproject2:java-source:sources:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while adding artifact to index: Error updating index: Lock obtain timed out: SimpleFSLock@E:\archiva\data\repositories\internal\.index\bytecode\write.lock
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:162)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:528)
+	at java.lang.Thread.run(Thread.java:595)
+
+
+and this:
+
+2009-01-13 19:01:51,248 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com.mywarproject:war:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while getting file contents: error in opening zip file
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:166)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.con","ConsumerException while starting up Archiva. after starting up archiva the logfile contains errors like the one below
+
+2008-10-14 09:05:52,164 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com.cg.g3his:pac.pam.api:jar:tests:0.0.1-20081014.060438-731] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while adding artifact to index: Error updating index: Lock obtain timed out: SimpleFSLock@C:\G3ROOT\mvn-repositories\archiva\cg.snapshots\.index\bytecode\write.lock
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:162)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:528)
+	at java.lang.Thread.run(Thread.java:619)",0.8581176,3.2145286e-05,0.23391813,0.53743774,false_negative
+MRM-1041,MRM-562,artifact version list should show basic shared project information rather than having to drill into one version .,"Artifact type ""maven-plugin"" is not detected correctly in .toArtifactReference() methods.. When working from a path to an ArtifactReference, the 'maven-plugin' type is not detected correctly.",0.47638345,0.9981464,0.0,0.609699,false_positive
+MRM-1024,MRM-1024,"Archiva throws NPE when a user uploads a large artifact. When a user uploads a file larger then 2097152bytes they are presented with a meaningless NPE (attached as NPE-user.txt) and the server throws a NPE (attached as NPE-server.txt) but also contains the following:
+
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.Dispatcher getSaveDir
+INFO: Unable to find 'struts.multipart.saveDir' property setting. Defaulting to javax.servlet.context.tempdir
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest parse
+SEVERE: org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:14 AM org.apache.struts2.interceptor.FileUploadInterceptor intercept
+SEVERE: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet default threw exception
+
+With some digging i found that i could increase this limit by adding ""struts.multipart.maxSize=20971520"" to webapps/archiva/ROOT/WEB-INF/classes/struts.properties which i have tested
+
+archiva needs to handle this exception better to the user/server and there needs to be a mechanism to define the max file size in a better solution","Archiva throws NPE when a user uploads a large artifact. When a user uploads a file larger then 2097152bytes they are presented with a meaningless NPE (attached as NPE-user.txt) and the server throws a NPE (attached as NPE-server.txt) but also contains the following:
+
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.Dispatcher getSaveDir
+INFO: Unable to find 'struts.multipart.saveDir' property setting. Defaulting to javax.servlet.context.tempdir
+Nov 27, 2008 2:58:14 AM org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest parse
+SEVERE: org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:14 AM org.apache.struts2.interceptor.FileUploadInterceptor intercept
+SEVERE: the request was rejected because its size (2346064) exceeds the configured maximum (2097152)
+Nov 27, 2008 2:58:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet default threw exception
+
+With some digging i found that i could increase this limit by adding ""struts.multipart.maxSize=20971520"" to webapps/archiva/ROOT/WEB-INF/classes/struts.properties which i have tested
+
+archiva needs to handle this exception better to the user/server and there needs to be a mechanism to define the max file size in a better solution",0.99999994,0.000150733,0.62222224,0.60005856,false_positive
+MRM-1026,MRM-562,"Repository manager does not see the ""Upload"" link. Hello,
+
+I've users that are ""Repository Manager"".
+They do not see the link ""Upload artifact"" in the menu. They have to enter the URL in the browser address bar to go to the upload form. It works but it's not enough ""user-friendly"" for them.
+
+I've looked at the default.jsp file in WEB-INF\jsp\decorators folder. It seems that the user does not match this condition:
+<redback:ifAnyAuthorized permissions=""archiva-manage-users,archiva-access-reports,archiva-manage-configuration"">
+
+So, either there is something wrong with the taglib (but I do not think so as the ""admin"" user can see the ""Upload artifact link"") either giving ""Repository manager"" role to a user is not enough.
+
+Please advise.
+
+Thanks,
+
+David","Artifact type ""maven-plugin"" is not detected correctly in .toArtifactReference() methods.. When working from a path to an ArtifactReference, the 'maven-plugin' type is not detected correctly.",0.48256066,0.9903881,0.0,0.6348904,false_positive
+MRM-1050,MRM-1050,Unable to remove user. In User Management i can't remove user. When i clik on red cross there is no action; only url is changed from http://localhost:8085/archiva/security/userlist.action to http://localhost:8085/archiva/security/userlist.action#userdeleteUrl,Unable to remove user. In User Management i can't remove user. When i clik on red cross there is no action; only url is changed from http://localhost:8085/archiva/security/userlist.action to http://localhost:8085/archiva/security/userlist.action#userdeleteUrl,0.99999994,0.00041343787,0.37777779,1.0,false_positive
+MRM-1063,MRM-562,"index-public-method throwing ConsumerExceptions. Executed ""mvn deploy"" on multi-module project. As build and deployment traverses to submodules, exceptions listed below are thrown:
+
+2009-01-13 19:01:47,763 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com. myproject2:jar:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while adding artifact to index: Error updating index: Lock obtain timed out: SimpleFSLock@E:\archiva\data\repositories\internal\.index\bytecode\write.lock
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:162)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:528)
+	at java.lang.Thread.run(Thread.java:595)
+2009-01-13 19:01:48,982 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com.myproject2:java-source:sources:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while adding artifact to index: Error updating index: Lock obtain timed out: SimpleFSLock@E:\archiva\data\repositories\internal\.index\bytecode\write.lock
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:162)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:528)
+	at java.lang.Thread.run(Thread.java:595)
+
+
+and this:
+
+2009-01-13 19:01:51,248 [pool-1-thread-1] WARN  org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure  - Unable to process artifact [com.mywarproject:war:20090113.69-RELEASE] with consumer [index-public-methods]
+org.apache.maven.archiva.consumers.ConsumerException: Error encountered while getting file contents: error in opening zip file
+	at org.apache.maven.archiva.consumers.lucene.IndexJavaPublicMethodsConsumer.processArchivaArtifact(IndexJavaPublicMethodsConsumer.java:166)
+	at org.apache.maven.archiva.database.updater.ProcessArchivaArtifactClosure.execute(ProcessArchivaArtifactClosure.java:50)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:388)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateUnprocessed(JdoDatabaseUpdater.java:154)
+	at org.apache.maven.archiva.database.updater.JdoDatabaseUpdater.updateAllUnprocessed(JdoDatabaseUpdater.java:88)
+	at org.apache.maven.archiva.scheduled.executors.ArchivaDatabaseUpdateTaskExecutor.executeTask(ArchivaDatabaseUpdateTaskExecutor.java:70)
+	at org.codehaus.plexus.taskqueue.execution.ThreadedTaskQueueExecutor$ExecutorRunnable$1.run(ThreadedTaskQueueExecutor.java:116)
+	at edu.emory.mathcs.backport.java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:442)
+	at edu.emory.mathcs.backport.java.util.concurrent.FutureTask.run(FutureTask.java:176)
+	at edu.emory.mathcs.backport.java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:987)
+	at edu.emory.mathcs.backport.java.util.con","Artifact type ""maven-plugin"" is not detected correctly in .toArtifactReference() methods.. When working from a path to an ArtifactReference, the 'maven-plugin' type is not detected correctly.",0.5237598,0.9566049,0.0066666664,0.59044486,false_positive

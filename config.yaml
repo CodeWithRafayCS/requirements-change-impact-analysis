@@ -1,0 +1,75 @@
+# =========================================================================
+# Central configuration. Every grid / threshold / seed used in the paper
+# lives here. Edit this file, not the pipeline code, to change behaviour.
+# =========================================================================
+
+data:
+  pairs_csv: "data/pairs.csv"       # flat CR x requirement table, see README
+  small_dataset_cr_threshold: 30    # below this many CRs -> 5-fold CV instead of a fixed split
+
+split:
+  train_frac: 0.60
+  val_frac: 0.20
+  test_frac: 0.20
+  seeds: [42]  # one pre-registered holdout split; no repeated-seed claim
+
+models:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  nli_model: "cross-encoder/nli-deberta-v3-base"
+  spacy_model: "en_core_web_sm"
+
+tfidf:
+  ngram_range: [1, 2]
+  sublinear_tf: true
+  stop_words: "english"
+
+stage1:
+  tau_grid: [0.100, 0.125, 0.150, 0.175, 0.200, 0.225, 0.250, 0.275, 0.300,
+             0.325, 0.350, 0.375, 0.400, 0.425, 0.450, 0.475, 0.500, 0.525,
+             0.550, 0.575, 0.600]
+  target_stage1_recall: 0.90        # calibrate tau to hit this on validation
+  fixed_tau_sensitivity_check: 0.50 # reported as a sensitivity row (Table 12)
+
+combiner:
+  weight_grid_step: 0.1             # simplex grid over (alpha, beta, gamma)
+  logreg_C_grid: [0.01, 0.1, 1.0, 10.0]
+  cutoff_grid_step: 0.05            # theta search 0.05..0.95
+  optimize_for: "f2"                # objective for weight/theta tuning
+
+nli:
+  batch_size: 32
+  max_length: 512
+  # Task-specific zero-shot reformulation (Step 2.1 of the paper).
+  premise_template: "A software system has this new requirement: {change_text}"
+  hypothesis_template: "The following existing requirement still applies: {requirement_text}"
+  # Sensitivity check (Table 12): a plain, non-reformulated pair.
+  plain_premise_template: "{change_text}"
+  plain_hypothesis_template: "{requirement_text}"
+
+matched_cost:
+  budgets_pct: [1, 2, 3, 5, 10]      # inspection-cost budgets for Table 9
+
+stats:
+  alpha: 0.05
+  bootstrap_resamples: 10000
+  holm_correction_family: ["H1", "H3a", "H3b"]
+
+# Published, external figures used ONLY for the contextual comparison rows in
+# Table 8. These are read from the paper, never computed by this code, and
+# must be re-verified against the source before submission (see Appendix B).
+published_reference:
+  embedding_t2_recall_pct: 51.7
+  embedding_t2_cost_pct: 2.2
+  prorefiicia_no_rag_recall_pct: 85.7
+  prorefiicia_no_rag_cost_pct: 3.0
+  prorefiicia_rag_recall_pct: 95.8
+  prorefiicia_rag_cost_pct: 3.4
+
+hypotheses:
+  h2_recall_floor_pct: 68.6          # 80% of 85.7, see Table 2 / H2 decision rule
+  h2_cost_ceiling_pct: 5.0
+
+paths:
+  cache_dir: "cache"
+  splits_dir: "splits"
+  results_dir: "results"

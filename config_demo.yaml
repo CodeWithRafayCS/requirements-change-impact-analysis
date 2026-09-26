@@ -1,0 +1,88 @@
+combiner:
+  cutoff_grid_step: 0.05
+  logreg_C_grid:
+  - 0.01
+  - 0.1
+  - 1.0
+  - 10.0
+  optimize_for: f2
+  weight_grid_step: 0.1
+data:
+  pairs_csv: data/pairs_SYNTHETIC_DEMO.csv
+  small_dataset_cr_threshold: 5
+hypotheses:
+  h2_cost_ceiling_pct: 5.0
+  h2_recall_floor_pct: 68.6
+matched_cost:
+  budgets_pct:
+  - 1
+  - 2
+  - 3
+  - 5
+  - 10
+models:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  nli_model: cross-encoder/nli-deberta-v3-base
+  spacy_model: en_core_web_sm
+nli:
+  batch_size: 32
+  hypothesis_template: 'The following existing requirement still applies: {requirement_text}'
+  max_length: 512
+  plain_hypothesis_template: '{requirement_text}'
+  plain_premise_template: '{change_text}'
+  premise_template: 'A software system has this new requirement: {change_text}'
+paths:
+  cache_dir: cache
+  results_dir: results
+  splits_dir: splits
+published_reference:
+  embedding_t2_cost_pct: 2.2
+  embedding_t2_recall_pct: 51.7
+  prorefiicia_no_rag_cost_pct: 3.0
+  prorefiicia_no_rag_recall_pct: 85.7
+  prorefiicia_rag_cost_pct: 3.4
+  prorefiicia_rag_recall_pct: 95.8
+split:
+  seeds:
+  - 42
+  test_frac: 0.2
+  train_frac: 0.6
+  val_frac: 0.2
+stage1:
+  fixed_tau_sensitivity_check: 0.5
+  target_stage1_recall: 0.9
+  tau_grid:
+  - 0.1
+  - 0.125
+  - 0.15
+  - 0.175
+  - 0.2
+  - 0.225
+  - 0.25
+  - 0.275
+  - 0.3
+  - 0.325
+  - 0.35
+  - 0.375
+  - 0.4
+  - 0.425
+  - 0.45
+  - 0.475
+  - 0.5
+  - 0.525
+  - 0.55
+  - 0.575
+  - 0.6
+stats:
+  alpha: 0.05
+  bootstrap_resamples: 10000
+  holm_correction_family:
+  - H1
+  - H3a
+  - H3b
+tfidf:
+  ngram_range:
+  - 1
+  - 2
+  stop_words: english
+  sublinear_tf: true

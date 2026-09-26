@@ -1,0 +1,7 @@
+hypothesis,comparison,mean_diff_pp,ci_lo_pp,ci_hi_pp,p_raw,p_adjusted,supported,observed_recall_pct,cost_pct,recall_floor_pct,cost_ceiling_pct
+H1,C3 vs B2 at B2 mean cost,-4.761904761904762,-14.285714285714285,0.0,1.0,1.0,False,,,,
+H3a,C3 vs C1 at B2 mean cost,0.0,0.0,0.0,1.0,1.0,False,,,,
+H3b,C4 vs C3 at B2 mean cost,4.761904761904762,0.0,14.285714285714285,0.5,1.0,False,,,,
+H4,AUROC(NLI) - AUROC(cosine),-45.10489510489511,-63.371356147021544,-21.58590308370043,0.9996000399960004,0.9996000399960004,False,,,,
+H1a,Validation Stage-1 recall - target,2.857142857142858,,,,,True,92.85714285714286,44.19047619047619,,
+H2,C4 recall/cost vs published thresholds,-25.74285714285714,-54.31428571428571,17.114285714285714,,,False,42.857142857142854,2.0952380952380953,68.6,5.0
